@@ -1,0 +1,10 @@
+numpy>=1.26,<2
+scipy>=1.11
+pillow>=10
+pyzmq>=25
+msgpack>=1.0
+pyarrow>=17
+pytest>=8
+PyYAML>=6
+websockets>=12
+protobuf>=6.33.5,<7

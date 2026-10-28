@@ -1,0 +1,3 @@
+# Install into EACH model's own environment, after its upstream dependencies.
+pyzmq>=25
+msgpack>=1.0

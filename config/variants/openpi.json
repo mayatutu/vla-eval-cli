@@ -1,0 +1,6 @@
+{
+  "backend": "openpi",
+  "checkpoint": "<AI_CHECKPOINT_DIRECTORY>",
+  "revision": "<YOUR_CHECKPOINT_VERSION_OR_HASH>",
+  "dataset_id": "<DATASET_ASSET_ID>"
+}

@@ -1,0 +1,19 @@
+# Replace every placeholder using the actual camera and calibration files.
+# Keep identity_confirmed false until physical role and serial are checked.
+version: 1
+cameras:
+  - serial: "<WRIST_CAMERA_ID>"
+    device: /dev/v4l/by-path/<WRIST_USB_PATH>-video-index0
+    identity_confirmed: false
+    calibration: calibration/<WRIST_CAMERA_ID>.npz
+    calibration_sha256: <SHA256_OF_THIS_NPZ>
+  - serial: "<LEFT_CAMERA_ID>"
+    device: /dev/v4l/by-path/<LEFT_USB_PATH>-video-index0
+    identity_confirmed: false
+    calibration: calibration/<LEFT_CAMERA_ID>.npz
+    calibration_sha256: <SHA256_OF_THIS_NPZ>
+  - serial: "<RIGHT_CAMERA_ID>"
+    device: /dev/v4l/by-path/<RIGHT_USB_PATH>-video-index0
+    identity_confirmed: false
+    calibration: calibration/<RIGHT_CAMERA_ID>.npz
+    calibration_sha256: <SHA256_OF_THIS_NPZ>

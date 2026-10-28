@@ -1,0 +1,14 @@
+# Linux client dependencies; no model frameworks needed.
+numpy>=1.26,<2
+scipy>=1.11
+pillow>=10
+pyzmq>=25
+msgpack>=1.0
+pyarrow>=17
+opencv-contrib-python==4.11.0.86
+gym==0.26.2
+zerorpc==0.6.3
+PyYAML>=6
+matplotlib>=3.7
+websockets>=12
+protobuf>=6.33.5,<7

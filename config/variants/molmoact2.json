@@ -1,0 +1,5 @@
+{
+  "backend": "molmoact2",
+  "checkpoint": "<AI_CHECKPOINT_DIRECTORY>",
+  "revision": "<YOUR_CHECKPOINT_VERSION_OR_HASH>"
+}

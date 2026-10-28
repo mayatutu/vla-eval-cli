@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "defaults": {
+    "action_space": "joint_position",
+    "action_dim": 8,
+    "control_hz": 30,
+    "max_action_seconds": 30,
+    "instruction": "<TASK_INSTRUCTION>",
+    "bind": "tcp://<MODEL_HOST_IP>:9117",
+    "nuc_ip": "<DROID_NUC_IP>",
+    "camera_config": "<CLIENT_CAMERA_CONFIG_ABSOLUTE_PATH>",
+    "cameras": {
+      "external_image": "<LEFT_CAMERA_ID>",
+      "wrist_image": "<WRIST_CAMERA_ID>"
+    },
+    "recording_cameras": {
+      "external_image": "<LEFT_CAMERA_ID>",
+      "wrist_image": "<WRIST_CAMERA_ID>",
+      "external_right_image": "<RIGHT_CAMERA_ID>"
+    }
+  },
+  "backends": {
+    "pi05": {
+      "python": "<AI_PI05_PYTHON>",
+      "tokenizer": "<AI_PI05_TOKENIZER>",
+      "action_steps": 50,
+      "control_hz": 30
+    },
+    "g05": {
+      "python": "<AI_G05_PYTHON>",
+      "g05_repo": "<AI_G05_G05_REPO>",
+      "g05_overlay": "<AI_G05_G05_OVERLAY>",
+      "processor": "<AI_G05_PROCESSOR>",
+      "action_steps": 8,
+      "control_hz": 30,
+      "g05_gripper_mode": "droid",
+      "g05_embodiment": "Droid_Franka",
+      "g05_gripper_evidence": "<TRAINING_GRIPPER_CONVENTION_REFERENCE>",
+      "control_hz_evidence": "<TRAINING_CONTROL_FREQUENCY_REFERENCE>"
+    },
+    "molmoact2": {
+      "python": "<AI_MOLMOACT2_PYTHON>",
+      "action_steps": 30,
+      "control_hz": 30,
+      "norm_tag": "droid_rc",
+      "num_steps": 10,
+      "cameras": {
+        "external_image": "<LEFT_CAMERA_ID>",
+        "wrist_image": "<WRIST_CAMERA_ID>",
+        "external_right_image": "<RIGHT_CAMERA_ID>"
+      }
+    },
+    "lingbot": {
+      "python": "<AI_LINGBOT_PYTHON>",
+      "lingbot_repo": "<AI_LINGBOT_LINGBOT_REPO>",
+      "lingbot_vlm_config": "<AI_LINGBOT_LINGBOT_VLM_CONFIG>",
+      "action_steps": 50,
+      "control_hz": 30,
+      "robot_config": "<ROBOT_CONFIG_FILENAME_IN_CHECKPOINT>",
+      "cameras": {
+        "external_image": "<LEFT_CAMERA_ID>",
+        "wrist_image": "<WRIST_CAMERA_ID>",
+        "external_right_image": "<RIGHT_CAMERA_ID>"
+      }
+    },
+    "openpi": {
+      "python": "<AI_OPENPI_PYTHON>",
+      "tokenizer": "<AI_OPENPI_TOKENIZER>",
+      "action_steps": 50,
+      "openpi_source_root": "<AI_OPENPI_OPENPI_SOURCE_ROOT>",
+      "native_source_sha256": {
+        "models/pi0_config.py": "e15d71586f1a561b35c5651227607613fb16d2df411f3708b1c9d36b02544285",
+        "models/model.py": "0d74bc1d8f4623ac3d8e543710b8bf75f9b95e588a3ebf6127c659e001385cff",
+        "policies/policy_config.py": "aaf42ab04a33b6c91d2447926211646c33ebd8ebfa427f026d7b6c4f7c45ec52",
+        "policies/policy.py": "a2ac5236e23b11d0f5a840d4a8fef148d89dba921d5452ec5dfcd5a6ffa46f20",
+        "policies/droid_policy.py": "7d0893555964d485e231f70084125084a99495705ddd74b29461229d524fff26",
+        "transforms.py": "a1b94e9e72849a18834778f229c6bb389a495eb7fbe0aa800edea728b9424ff4",
+        "training/config.py": "b54b77a123537bcb304ffe4ad3ed191ee065890f8d7d6a0973d13a0231b93cec"
+      },
+      "control_hz": 30
+    },
+    "molmoact2_lerobot": {
+      "python": "<AI_MOLMOACT2_LEROBOT_PYTHON>",
+      "action_steps": 30,
+      "control_hz": 30,
+      "base_assets": "<AI_MOLMOACT2_LEROBOT_BASE_ASSETS>",
+      "cameras": {
+        "external_image": "<LEFT_CAMERA_ID>",
+        "wrist_image": "<WRIST_CAMERA_ID>",
+        "external_right_image": "<RIGHT_CAMERA_ID>"
+      },
+      "base_asset_sha256": {
+        "config.json": "80faf9afa5b87b01dd4dceac6c53e5194680b5f965287de213fbce73e0775100",
+        "processor_config.json": "bd5ad3ddc456b7534005e075a5c3cb0644da5e4b1aa77f1d74268a9e4c7f071a",
+        "tokenizer_config.json": "0ffb85ef66d5b354f53a341ff01edc5137c324981bf37928b86bcdee2b265415",
+        "tokenizer.json": "d5395aefc9b1b7f0385d8c86a2f1775e5af81bdfbf9f2d97827ea37921d9f862",
+        "chat_template.jinja": "ec66862fda57dc1aef90a21b2a0f64c18a280e2483206449bd251a73b8993101"
+      }
+    },
+    "groot_lerobot": {
+      "python": "<AI_GROOT_LEROBOT_PYTHON>",
+      "action_steps": 40,
+      "control_hz": 30,
+      "cosmos_snapshot": "<AI_COSMOS_TOKENIZER_DIRECTORY>",
+      "groot_architecture": "<AI_REPO>/config/groot_base_architecture.json"
+    },
+    "groot_isaac": {
+      "python": "<AI_GROOT_ISAAC_PYTHON>",
+      "isaac_source_root": "<AI_GROOT_ISAAC_ISAAC_SOURCE_ROOT>",
+      "cosmos_snapshot": "<AI_GROOT_ISAAC_COSMOS_SNAPSHOT>",
+      "action_steps": 16,
+      "native_source_sha256": {
+        "configs/model/gr00t_n1d7.py": "379ff708496a73b25b12f4656850284a16fde0e205828e2a0c0be0af61463744",
+        "data/types.py": "329acd11ca7a92c3894bbe44fe3fed2677b9c9f83bee6adcb4aeab8b1e846a1a",
+        "model/gr00t_n1d7/gr00t_n1d7.py": "6bd66ef768f1484ac5a7889c40358a599f1862b1d554d47d357e113f2f96501c",
+        "model/gr00t_n1d7/processing_gr00t_n1d7.py": "77fd0e1f6972cdcf0334f18f2e84724629f6746612721b6b27135ccb23f00b3f",
+        "model/modules/qwen3_backbone.py": "e3902c8385d586fb9f079abf58d37795cbcefc55f2f506f761c4b78a5afbaf52",
+        "policy/gr00t_policy.py": "ad1183a3ce1ebed6cace4a9cb8c5a123e823a0760ebf46f3694639a5ad1521ec",
+        "policy/policy.py": "b53326aee0c26ea34201d70510ad92608a96929d7f39039f578c3d865446de23"
+      },
+      "control_hz": 30
+    }
+  },
+  "models": {
+    "g05": {
+      "backend": "g05",
+      "checkpoint": "<AI_G05_CHECKPOINT>",
+      "revision": "<YOUR_CHECKPOINT_VERSION_OR_HASH>"
+    },
+    "pi05": {
+      "backend": "pi05",
+      "checkpoint": "<AI_PI05_CHECKPOINT>",
+      "revision": "<YOUR_CHECKPOINT_VERSION_OR_HASH>"
+    },
+    "lingbot": {
+      "backend": "lingbot",
+      "checkpoint": "<AI_LINGBOT_CHECKPOINT>",
+      "revision": "<YOUR_CHECKPOINT_VERSION_OR_HASH>"
+    },
+    "molmoact2": {
+      "backend": "molmoact2_lerobot",
+      "checkpoint": "<AI_MOLMOACT2_CHECKPOINT>",
+      "revision": "<YOUR_CHECKPOINT_VERSION_OR_HASH>"
+    },
+    "groot": {
+      "backend": "groot_lerobot",
+      "checkpoint": "<AI_GROOT_CHECKPOINT>",
+      "revision": "<YOUR_CHECKPOINT_VERSION_OR_HASH>"
+    }
+  }
+}
