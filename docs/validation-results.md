@@ -11,4 +11,4 @@ python -m pytest -q --tb=short
 
 旧导出测试按现有最近邻采样/复用标记语义更新，保留源数据缺失、时钟异常、错误对齐声明、输出篡改等拒绝路径。历史现场 checkpoint 依赖改用隔离输入；离线测试不证明真实权重加载成功。
 
-本轮没有连接机器人、相机或加载 GPU 模型。尚未验证全新 Linux/GPU 环境安装和整理版本的整机运行。模型兼容范围和缺失的上游来源信息见 models.md 与 THIRD_PARTY_NOTICES.md。
+模型兼容范围和上游来源信息见 [models.md](models.md) 与 [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)。
